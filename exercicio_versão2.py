@@ -1,15 +1,22 @@
 def verificador_de_palindromo(supostos_palindromos):
     for suposto_palindromo in supostos_palindromos:
-        suposto_palindromo = suposto_palindromo.lower().replace("’", "").replace('!', '').replace('.', '').replace(',', '').replace('/',
-                                                                                                               '').replace(
-            '-', '')
+        suposto_palindromo = suposto_palindromo \
+            .lower() \
+            .replace("’", "") \
+            .replace('!', '') \
+            .replace('.', '') \
+            .replace(',', '') \
+            .replace('/', '') \
+            .replace('-', '')
         palavras = suposto_palindromo.split()
         suposto_palindromo_tudo_junto = ''.join(palavras)
         inverso = suposto_palindromo_tudo_junto[::-1]
-        if inverso != suposto_palindromo_tudo_junto:
-            print(f'{suposto_palindromo} não é um palíndromo!')
+        if inverso == suposto_palindromo_tudo_junto:
+            print(f'{suposto_palindromo} é um palíndromo! - True')
         else:
-            print(f'{suposto_palindromo} é um palíndromo!')
+            print(f'{suposto_palindromo} não é um palíndromo! - False')
+
+
 
 
 supostos_palindromos = ['Rotator', 'bob', 'madam', 'mAlAyAlam',
